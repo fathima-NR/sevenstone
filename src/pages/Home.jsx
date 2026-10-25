@@ -151,7 +151,7 @@ function Favourites() {
             const single = it.price.kind === 'single'
             const first = it.price.options?.[0]
             return (
-              <li key={it.no} className="fav" data-reveal="up" style={{ '--i': Math.min(i, 4) }}>
+              <li key={it.no} className="fav" data-reveal="scale" style={{ '--i': Math.min(i, 4) }}>
                 <div className="fav__img">
                   <Photo name={it.photo} alt={it.name} sizes="340px" />
                   <span className="fav__no">No. {it.no}</span>

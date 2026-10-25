@@ -277,13 +277,16 @@
 }
 .favs__track {
   list-style: none;
-  margin: 44px 0 0;
-  padding: 0 0 12px;
+  margin: 28px 0 0;
+  /* room for the hover lift, since overflow-y must stay hidden */
+  padding: 16px 0 12px;
   padding-inline: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter)));
   scroll-padding-inline: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter)));
   display: flex;
   gap: 18px;
   overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
