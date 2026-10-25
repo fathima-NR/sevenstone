@@ -945,33 +945,42 @@
 .follow-home__strip li:nth-child(even) {
   translate: 0 18px;
 }
-/* Phones and tablets: one large photo with five smaller tiles around it */
+/* Phones and tablets: centred heading, swipeable staggered photo row like desktop */
 @media (max-width: 959px) {
+  .follow-home__head {
+    text-align: center;
+    justify-items: center;
+  }
+  .follow-home__side {
+    justify-items: center;
+  }
+  .follow-home__side .social-icons {
+    justify-content: center;
+  }
   .follow-home__strip {
-    margin-top: 32px;
-    gap: 8px;
+    margin-top: 36px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    padding-bottom: 26px;
+    scrollbar-width: none;
+  }
+  .follow-home__strip::-webkit-scrollbar {
+    display: none;
   }
   .follow-home__strip li {
-    aspect-ratio: 1;
-  }
-  .follow-home__strip li:nth-child(even) {
-    translate: none;
-  }
-  .follow-home__strip li:first-child {
-    grid-column: span 2;
-    grid-row: span 2;
-    aspect-ratio: auto;
+    flex: 0 0 44%;
+    scroll-snap-align: start;
   }
   .follow-home__strip a {
     position: relative;
-    height: 100%;
-    aspect-ratio: auto;
+    aspect-ratio: 4 / 5;
     border-radius: var(--r-l);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-  }
-  .follow-home__strip li:first-child a {
-    outline: 2px solid var(--saffron);
-    outline-offset: 3px;
   }
   .follow-home__strip li:last-child a::after {
     content: 'View gallery';
