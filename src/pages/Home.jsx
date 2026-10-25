@@ -87,7 +87,6 @@ function Hero() {
         </div>
 
         <div className="hb__visual" aria-hidden="true">
-          <div className="hb__sun" />
           <svg className="hb__ring" viewBox="0 0 200 200">
             <path d="M 22 78 A 80 80 0 0 1 178 78" />
             <path d="M 178 122 A 80 80 0 0 1 22 122" />

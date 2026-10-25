@@ -6,25 +6,6 @@
   padding: calc(var(--hdr) + clamp(24px, 4vw, 56px)) 0 clamp(56px, 7vw, 96px);
   background: radial-gradient(circle at 15% 20%, rgba(245, 162, 27, 0.1), transparent 45%), var(--ink);
 }
-/* big saffron disc behind the plate, echoing the logo's ring */
-.hb__sun {
-  position: absolute;
-  z-index: -1;
-  width: 120%;
-  aspect-ratio: 1;
-  left: 50%;
-  top: 50%;
-  translate: -50% -42%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, var(--saffron-2), var(--saffron) 55%, #d9860a);
-  animation: sun-in 1.2s 0.1s var(--ease) both;
-}
-@keyframes sun-in {
-  from {
-    scale: 0.6;
-    opacity: 0;
-  }
-}
 .hb__grid {
   display: grid;
   gap: 40px;
@@ -218,10 +199,6 @@
   }
   .hb__visual {
     width: min(32vw, 440px);
-  }
-  .hb__sun {
-    width: 134%;
-    translate: -42% -50%;
   }
 }
 @media (prefers-reduced-motion: reduce) {
