@@ -96,7 +96,15 @@ export default function OrderBar() {
                     <PlusIcon />
                   </button>
                 </div>
-                <div className="line__price">{l.price == null ? 'Ask' : formatPrice(l.price * l.qty)}</div>
+                <div className="line__price">
+                  {l.price == null ? (
+                    'Ask'
+                  ) : (
+                    <>
+                      <span className="cur">AED</span> {formatPrice(l.price * l.qty)}
+                    </>
+                  )}
+                </div>
               </li>
             ))}
           </ul>

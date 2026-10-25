@@ -30,7 +30,9 @@ export default function MenuItem({ item, onPhoto }) {
               {price.kind === 'asp' ? (
                 <abbr title="Price on request — ask when you order">Ask</abbr>
               ) : (
-                formatPrice(price.options[0].price)
+                <>
+                  <span className="cur">AED</span> {formatPrice(price.options[0].price)}
+                </>
               )}
             </span>
           )}
@@ -48,7 +50,9 @@ export default function MenuItem({ item, onPhoto }) {
                 aria-label={`Add ${item.name}${o.label ? `, ${o.label}` : ''}, AED ${formatPrice(o.price)}`}
               >
                 {o.label && <span className="opt__label">{o.label}</span>}
-                <span className="opt__price">{formatPrice(o.price)}</span>
+                <span className="opt__price">
+                  <span className="cur">AED</span> {formatPrice(o.price)}
+                </span>
                 <PlusIcon />
               </button>
             ))}

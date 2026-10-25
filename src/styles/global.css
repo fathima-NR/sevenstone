@@ -440,6 +440,14 @@ h3 {
   view-transition-name: dock;
 }
 
+/* Small "AED" in front of prices */
+.cur {
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
 /* ---------- Section rhythm ---------- */
 .section {
   padding-block: clamp(80px, 11vw, 160px);
