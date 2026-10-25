@@ -21,6 +21,12 @@ function Stat({ to, label, suffix = '', static: fixed }) {
   )
 }
 
+const DAY = [
+  { time: 'From 6 am', title: 'Breakfast', dishes: 'Ghee roast, idly vada, puri bhaji, karak tea', photo: '40' },
+  { time: 'Lunch', title: 'Biryani & curries', dishes: 'Thalassery dum biryani, Kerala chatti curries', photo: '66' },
+  { time: 'Dinner', title: 'Grills & wok', dishes: 'Charcoal chicken, silog plates, Chinese wok', photo: '322' },
+]
+
 const STEPS = [
   [
     'Pick your dishes',
@@ -66,22 +72,41 @@ export default function About() {
       </section>
 
       <section className="section on-light ab-story">
-        <div className="wrap ab-story__grid">
-          <h2 className="display display-m" data-reveal="up">
-            From 6 am dosa to charcoal grills
-          </h2>
-          <div className="ab-story__copy">
-            <p className="lead" data-reveal="up">
-              The day starts with breakfast at 6 am: ghee roast, idly vada, puri bhaji and karak tea. Later the kitchen
-              moves on to Thalassery dum biryani, Kerala chatti curries, charcoal chicken, Filipino silog plates and
-              Chinese wok dishes.
-            </p>
-            <p className="muted" data-reveal="up" style={{ '--i': 1 }}>
-              The menu runs to {allItems.length} dishes across {menu.length} sections, from burgers and club sandwiches
-              to faloodas, fresh juices and mojitos. Each dish has a number, so you can order the way regulars do: just
-              quote the number.
-            </p>
+        <div className="wrap">
+          <div className="ab-story__grid">
+            <div>
+              <p className="ab-story__tag" data-reveal="up">A day in our kitchen</p>
+              <h2 className="display display-l ab-story__title" data-reveal="up" style={{ '--i': 1 }}>
+                From 6 am dosa to <span className="ab-story__hl">charcoal grills</span>
+              </h2>
+            </div>
+            <div className="ab-story__copy">
+              <p className="lead" data-reveal="up">
+                The day starts with breakfast at 6 am: ghee roast, idly vada, puri bhaji and karak tea. Later the
+                kitchen moves on to Thalassery dum biryani, Kerala chatti curries, charcoal chicken, Filipino silog
+                plates and Chinese wok dishes.
+              </p>
+              <p className="ab-story__note" data-reveal="up" style={{ '--i': 1 }}>
+                <strong>{allItems.length} dishes</strong> across <strong>{menu.length} sections</strong>. Every dish
+                has a number, so you can order the way regulars do: just quote the number.
+              </p>
+            </div>
           </div>
+
+          <ol className="ab-day">
+            {DAY.map((d, i) => (
+              <li key={d.title} className="ab-day__card" data-reveal="up" style={{ '--i': i }}>
+                <div className="ab-day__img">
+                  <Photo name={d.photo} alt="" sizes="(min-width: 760px) 30vw, 90vw" />
+                  <span className="ab-day__time">{d.time}</span>
+                </div>
+                <div className="ab-day__body">
+                  <h3>{d.title}</h3>
+                  <p>{d.dishes}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
