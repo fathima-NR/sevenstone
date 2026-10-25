@@ -683,8 +683,6 @@
   left: 6%;
   width: 28%;
   rotate: -9deg;
-  filter: drop-shadow(0 0 8px rgba(255, 236, 140, 0.95)) drop-shadow(0 0 24px rgba(255, 210, 70, 0.85))
-    drop-shadow(0 30px 30px rgba(27, 26, 24, 0.35));
   animation: bob 6.5s -1s ease-in-out infinite;
 }
 .juice__g--2 {

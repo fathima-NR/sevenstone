@@ -284,7 +284,7 @@ export const photoSizes = {
   253: [258, 160],
   251: [258, 169],
   292: [471, 258],
-  'cut/juice-strawberry': [378, 758],
+  'cut/juice-strawberry': [375, 756],
   'cut/mojito': [227, 492],
   'cut/juice-mango': [348, 747],
   'cut/burger': [857, 708],
