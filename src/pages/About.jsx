@@ -95,7 +95,7 @@ export default function About() {
             <div>
               <p className="ab-story__tag" data-reveal="up">Our story</p>
               <h2 className="display display-l ab-story__title" data-reveal="up" style={{ '--i': 1 }}>
-                From 6 am dosa to <span className="ab-story__hl">charcoal grills</span>
+                Home-style food, <span className="ab-story__hl">all day long</span>
               </h2>
             </div>
             <div className="ab-story__copy">
