@@ -1,21 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { business, waLink } from '../data/business'
 import { formatPrice } from '../data/menu'
 import { orderMessage, useOrder } from '../order'
-import { CloseIcon, MinusIcon, PlusIcon, WhatsAppIcon } from './Icons'
+import { CloseIcon, MinusIcon, PhoneIcon, PlusIcon, WhatsAppIcon } from './Icons'
 
 export default function OrderBar() {
   const { lines, count, total, hasAsp, change, clear, open, setOpen } = useOrder()
   const ref = useRef(null)
-  const [scrolled, setScrolled] = useState(false)
-
-  // The floating WhatsApp button appears once the page's own buttons are out of view
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 480)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     const d = ref.current
@@ -32,20 +23,29 @@ export default function OrderBar() {
 
   return (
     <>
+      <div className="fabs" data-raised={count > 0}>
+        <a
+          className="fab fab--wa"
+          href={waLink(business.whatsapp[0].number, 'Hello Seven Stones, I would like to order:')}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`WhatsApp ${business.whatsapp[0].display}`}
+          title="WhatsApp us"
+        >
+          <WhatsAppIcon />
+        </a>
+        <a
+          className="fab fab--call"
+          href={`tel:${business.phones[0].tel}`}
+          aria-label={`Call ${business.phones[0].display}`}
+          title={`Call ${business.phones[0].display}`}
+        >
+          <PhoneIcon />
+        </a>
+      </div>
+
       <div className="dock">
-        {count === 0 ? (
-          scrolled && (
-            <a
-              className="wa-float"
-              href={waLink(business.whatsapp[0].number, 'Hello Seven Stones, I would like to order:')}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon />
-              <span>WhatsApp us</span>
-            </a>
-          )
-        ) : (
+        {count > 0 && (
           <button className="order-bar" onClick={() => setOpen(true)} aria-haspopup="dialog">
             <span className="order-bar__count" key={count}>
               {count}
