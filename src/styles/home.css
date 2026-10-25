@@ -683,6 +683,8 @@
   left: 6%;
   width: 28%;
   rotate: -9deg;
+  filter: drop-shadow(0 0 8px rgba(255, 236, 140, 0.95)) drop-shadow(0 0 24px rgba(255, 210, 70, 0.85))
+    drop-shadow(0 30px 30px rgba(27, 26, 24, 0.35));
   animation: bob 6.5s -1s ease-in-out infinite;
 }
 .juice__g--2 {
@@ -944,6 +946,48 @@
 }
 .follow-home__strip li:nth-child(even) {
   translate: 0 18px;
+}
+/* Phones and tablets: one large photo with five smaller tiles around it */
+@media (max-width: 959px) {
+  .follow-home__strip {
+    margin-top: 32px;
+    gap: 8px;
+  }
+  .follow-home__strip li {
+    aspect-ratio: 1;
+  }
+  .follow-home__strip li:nth-child(even) {
+    translate: none;
+  }
+  .follow-home__strip li:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+  .follow-home__strip a {
+    position: relative;
+    height: 100%;
+    aspect-ratio: auto;
+    border-radius: var(--r-l);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+  .follow-home__strip li:first-child a {
+    outline: 2px solid var(--saffron);
+    outline-offset: 3px;
+  }
+  .follow-home__strip li:last-child a::after {
+    content: 'View gallery';
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 6px;
+    background: rgba(27, 26, 24, 0.6);
+    color: var(--saffron);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    text-align: center;
+  }
 }
 @media (min-width: 960px) {
   .follow-home__head {
