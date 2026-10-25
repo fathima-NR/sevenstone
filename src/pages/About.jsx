@@ -22,9 +22,27 @@ function Stat({ to, label, suffix = '', static: fixed }) {
 }
 
 const DAY = [
-  { time: 'From 6 am', title: 'Breakfast', dishes: 'Ghee roast, idly vada, puri bhaji, karak tea', photo: '40' },
-  { time: 'Lunch', title: 'Biryani & curries', dishes: 'Thalassery dum biryani, Kerala chatti curries', photo: '66' },
-  { time: 'Dinner', title: 'Grills & wok', dishes: 'Charcoal chicken, silog plates, Chinese wok', photo: '322' },
+  {
+    time: '6 am – 12 pm',
+    title: 'South Indian mornings',
+    text: 'Crisp dosa off the tawa, soft idly and vada, and karak tea poured strong.',
+    dishes: ['Ghee Roast', 'Masala Dosa', 'Idly Vada', 'Puri Bhaji'],
+    photo: '40',
+  },
+  {
+    time: 'Lunch',
+    title: 'Biryani & curries',
+    text: 'Thalassery dum biryani sealed and slow-cooked, with Kerala curries in clay chattis.',
+    dishes: ['Dum Biryani', 'Chatti Curry', 'Kizhi Parotta'],
+    photo: '66',
+  },
+  {
+    time: 'Dinner',
+    title: 'Grills & wok',
+    text: 'The charcoal grill takes over, alongside Chinese wok dishes and Filipino silog plates.',
+    dishes: ['Mixed Grill', 'Peri Peri Chicken', 'Chicken Silog'],
+    photo: '322',
+  },
 ]
 
 const STEPS = [
@@ -75,21 +93,35 @@ export default function About() {
         <div className="wrap">
           <div className="ab-story__grid">
             <div>
-              <p className="ab-story__tag" data-reveal="up">A day in our kitchen</p>
+              <p className="ab-story__tag" data-reveal="up">Our story</p>
               <h2 className="display display-l ab-story__title" data-reveal="up" style={{ '--i': 1 }}>
                 From 6 am dosa to <span className="ab-story__hl">charcoal grills</span>
               </h2>
             </div>
             <div className="ab-story__copy">
               <p className="lead" data-reveal="up">
-                The day starts with breakfast at 6 am: ghee roast, idly vada, puri bhaji and karak tea. Later the
-                kitchen moves on to Thalassery dum biryani, Kerala chatti curries, charcoal chicken, Filipino silog
-                plates and Chinese wok dishes.
+                Since {business.established}, Seven Stones has been the all-day kitchen of Barsha Heights. Mornings
+                start with ghee roast and karak tea, lunch brings the biryani pots, and by evening the charcoal grill
+                is going.
               </p>
-              <p className="ab-story__note" data-reveal="up" style={{ '--i': 1 }}>
-                <strong>{allItems.length} dishes</strong> across <strong>{menu.length} sections</strong>. Every dish
-                has a number, so you can order the way regulars do: just quote the number.
+              <p className="muted" data-reveal="up" style={{ '--i': 1 }}>
+                Kerala home cooking sits next to North Indian curries, Arabic grills, Chinese wok dishes and Filipino
+                plates, all from one kitchen and delivered free across the neighbourhood.
               </p>
+              <dl className="ab-story__facts" data-reveal="up" style={{ '--i': 2 }}>
+                <div>
+                  <dt>{allItems.length}</dt>
+                  <dd>dishes</dd>
+                </div>
+                <div>
+                  <dt>{menu.length}</dt>
+                  <dd>menu sections</dd>
+                </div>
+                <div>
+                  <dt>{business.cuisines.length}</dt>
+                  <dd>cuisines</dd>
+                </div>
+              </dl>
             </div>
           </div>
 
@@ -102,11 +134,20 @@ export default function About() {
                 </div>
                 <div className="ab-day__body">
                   <h3>{d.title}</h3>
-                  <p>{d.dishes}</p>
+                  <p>{d.text}</p>
+                  <ul className="ab-day__dishes" aria-label="Try">
+                    {d.dishes.map((n) => (
+                      <li key={n}>{n}</li>
+                    ))}
+                  </ul>
                 </div>
               </li>
             ))}
           </ol>
+
+          <p className="ab-story__foot" data-reveal="up">
+            <span>No. 66</span> Every dish carries its number from our printed menu. Regulars just quote it.
+          </p>
         </div>
       </section>
 
