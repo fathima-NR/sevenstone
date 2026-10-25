@@ -45,8 +45,6 @@ export const business = {
     breakfast: 'Breakfast 6 am to 12 pm',
   },
 
-  notes: ['All prices are in AED and include tax.', 'Pictures are for illustration only.'],
-
   // The menu card shows Instagram and Facebook icons with the name "Seven Stone",
   // but no handle or link, and none could be verified online. Paste the full
   // profile URLs here (e.g. 'https://www.instagram.com/yourhandle'). Empty ones

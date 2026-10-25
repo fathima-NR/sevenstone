@@ -1,6 +1,5 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { allItems, menu } from '../data/menu'
-import { business } from '../data/business'
 import { useRouter, useTitle } from '../router'
 import Lightbox from '../components/Lightbox'
 import MenuItem from '../components/MenuItem'
@@ -87,9 +86,7 @@ export default function MenuPage() {
           <p className="lead">
             {allItems.length} dishes, each with the same number as our printed menu. Tap{' '}
             <span className="plus-inline">+</span> to build your order, then send it to us on WhatsApp.
-          </p>
-          <p className="mp__fine muted">{business.notes.join(' ')}</p>
-        </div>
+          </p>        </div>
       </header>
 
       <div className="mp__bar">

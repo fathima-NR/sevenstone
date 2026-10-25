@@ -318,7 +318,7 @@ function JuiceBar() {
           </div>
         </div>
         <div className="juice__glasses" aria-hidden="true">
-          <Photo name="cut/juice-passion" alt="" className="juice__g juice__g--1" />
+          <Photo name="cut/juice-strawberry" alt="" className="juice__g juice__g--1" />
           <Photo name="cut/juice-mango" alt="" className="juice__g juice__g--2" />
           <Photo name="cut/mojito" alt="" className="juice__g juice__g--3" />
         </div>

@@ -65,7 +65,7 @@ export default function Gallery() {
           <span className="outline-saffron">kitchen</span>
         </h1>
         <p className="lead muted ph-in" style={{ '--d': '120ms' }}>
-          A look at what comes out of the Seven Stones kitchen. Pictures are for illustration only.
+          A look at what comes out of the Seven Stones kitchen.
         </p>
       </section>
 

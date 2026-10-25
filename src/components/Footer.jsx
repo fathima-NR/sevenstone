@@ -50,7 +50,6 @@ export default function Footer() {
       </div>
 
       <div className="wrap ftr__base">
-        <p>{business.notes.join(' ')}</p>
         <p>
           Copyright © {new Date().getFullYear()} {business.name}. All rights reserved.
         </p>
